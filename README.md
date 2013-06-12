@@ -3,7 +3,7 @@
 This version of Sassaparilla has been specifically adapted for Platinumseed.
 The following changes from the default version have been made
 
- - Folder restructuring, moving resources from the assests folder into root
+ - Folder restructuring, moving resources from the assets folder into root
  - Added images folder
  - Fonts folder located in css/fonts
  - Integration of the HTML 5 boilerplate index template
