@@ -1,6 +1,6 @@
 # Sassaparilla Mashup
 
-This version of Sassaparilla has been specifically adapted for Platinumseed.
+This version of Sassaparilla has been specifically adapted for Platinumseed Digital Marketing (http://www.platinumseed.com)
 The following changes from the default version have been made
 
  - Folder restructuring, moving resources from the assets folder into root
