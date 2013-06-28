@@ -88,31 +88,6 @@ a {
 
 
 
-/* ::Layout styles - Layouts hold one or more modules together. */
-/* ------------------------------------------------------------ */
-
-.container {
-	@extend .clearfix;
-	margin: 0 auto;
-	width: 95%;
-}
-
-/* Example styles - you'll most likey want to remove*/
-header {
-	@include padding-leader(4);
-	@include padding-trailer(2);
-	@include trailer(6);
-	background: #333;
-	h1 { color: #fff; }
-}
-
-section 				{ @extend .clearfix; }
-h1 						{ font-weight: 600; }
-ol 						{ @include ordered-inside }
-ul 						{ @include unordered-inside }
-
-
-
 /* ::Media queries */
 /* ------------------------------------------------------------ */
 
@@ -177,29 +152,4 @@ ul 						{ @include unordered-inside }
 
 .is-lowercase {
 	text-transform: lowercase;
-}
-
-
-
-/* ::Debugs and #grid by Jon Gibbins */
-/* ----------------------------------------------------------- */
-
-#grid {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#grid div.horiz{
-	// Use this one NOT using a global border-box setting
-	// height: $base-line-height - 1px;
-	
-	// Use this one if you ARE using a global border-box setting
-    height: $base-line-height;
-    
-    // Carry on...
-    border-bottom: 1px solid #ddd;
-    margin: 0;
-    padding: 0;
 }
