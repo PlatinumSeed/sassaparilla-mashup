@@ -38,9 +38,6 @@ line_comments = false
 # Chrome needs a precision of 7 to round properly
 Sass::Script::Number.precision = 7
 
-sass_options = {:sourcemap => true}
-
-
 
 # Stuff we don't really need below
 # -----------------------------------------------------------------------------
