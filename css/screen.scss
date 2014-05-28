@@ -9,15 +9,12 @@
 	//:: Mixins
 // ::Clearfix extends
 // ::Base styles
-
-// ::Layout styles 
-// ::Media queries 
-// ::State styles
-// ::Debugs  
+// ::Layout styles
+// ::Media queries
 
 
 
-// ::Imports pre-render. Must be after reset 
+// ::Imports pre-render. Must be after reset
 // ------------------------------------------------------------
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
@@ -26,6 +23,9 @@
 @import "libs/reset";
 @import "libs/settings";
 @import "libs/mixins";
+@import "libs/sprites"; //Remove if you not using sprites
+@import "libs/typography";
+@import "libs/forms";
 
 
 
@@ -57,33 +57,20 @@ html {
 	font-size: 100%;
 }
 
-body { 
-	color: $base-color;
-	font-family: Helvetica, Arial, sans-serif;
+body {
+
 }
 
 a {
 	color: $action;
-	@include force-wrap;					// force text links to wrap
+	@include force-wrap;// force text links to wrap
+
 	&:hover, &:focus, &:active {
 		color: $action-respond
 	}
 }
 
-// Import base typography into the cascade (if required)
-@import "libs/typography"; 		
 
-
-// Import form styles into the cascade (if required)
-@import "libs/forms";			
-
-
-
-// -------------------------------------------------------------------------------------------------------
-
-// All the below can be removed if need be
-
-// -------------------------------------------------------------------------------------------------------
 
 
 
@@ -128,28 +115,7 @@ a {
 }
 
 
-// IOS specifics 
+// IOS specifics
 @media screen and (max-width: 769px) {  // Absolute measure here, as we're talking about devices, not screen size
 	-webkit-text-size-adjust:none; 		// Stop iPhone/iPad from scaling text
-}
-
-
-/* ::State styles */
-/* ------------------------------------------------------------ */
-
-.is-hidden {
-	display: none;
-}
-
-.is-shown, .is-block {
-	display: block;
-}
-
-.is-uppercase {
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-
-.is-lowercase {
-	text-transform: lowercase;
 }

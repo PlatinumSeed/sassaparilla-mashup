@@ -10,6 +10,7 @@ The following changes from the default version have been made
  - Integration the latest development version of modernizr. This version should be switched with a production version which has only the required modules included once development is complete
  - Integration of Susy grid framework with compass via the "config.rb" file. Settings for Susy are located in the "css/lib/_settings.scss" file
  - Uses jquery 1.9.1 by default
+ - Grunt for minifying and concatenating JS and CSS
 
  To follow is the default Sassaparilla documantation
 
@@ -19,7 +20,7 @@ A quick start template for (hopefully) better websites.
 
 ## Overview
 
-Sassaparilla is a set of default rules and style that starts everything we do at [fffunction](http://fffunction.co) in a consistent manner. 
+Sassaparilla is a set of default rules and style that starts everything we do at [fffunction](http://fffunction.co) in a consistent manner.
 
 It's not a boilerplate or a theme.
 
@@ -37,11 +38,11 @@ Both Sass and Compass are Ruby Gems and will need to be installed via command li
 
 You can compile using a GUI like Codekit or go hardcore and just use command line. Either way it's pretty easy to get up and running.
 
-You'll find documentation on both the Sass and Compass websites on how to install and use these tools. If you plan on installing Compass (and you'll need to), then you shouldn't need to install Sass separately. 
+You'll find documentation on both the Sass and Compass websites on how to install and use these tools. If you plan on installing Compass (and you'll need to), then you shouldn't need to install Sass separately.
 
 To install compass on a Mac open Terminal and type:
 
-### gem update --system 
+### gem update --system
 This will update the system. Then
 
 ### gem install compass
@@ -49,10 +50,10 @@ To install compass
 
 If you have trouble, try using the 'sudo commands' (with care) to access the correct level of permissions. E.g
 
-### sudo gem update --system 
+### sudo gem update --system
 ### sudo gem install compass
 
---- 
+---
 
 ## CSS set-up
 
@@ -84,7 +85,7 @@ This file contains the core typesetting for the site. It relies on variables set
 
 Contains default form elements and standard styling. If you're not using forms you can safely leave this out.
 
---- 
+---
 
 ## Compass rhythm and leading
 
@@ -92,29 +93,29 @@ Sassaparilla tries to make leading and spacing as easy as possible, whilst writi
 
 #### In settings.scss
 
-##### Setting up your base-font-size. 
+##### Setting up your base-font-size.
 This defaults to 16px and, generally this works well in your calculations so you shouldn't need to change this (you can if you like).
 
-##### Set up your base-line-height. 
-To prevent oddly spaced leading and large gaps between lines, we like to use a smaller measure, as you might do in print design. Something like 6px works well. Later, you'll use multiples of this baseline to creating your leading and spacing. 
+##### Set up your base-line-height.
+To prevent oddly spaced leading and large gaps between lines, we like to use a smaller measure, as you might do in print design. Something like 6px works well. Later, you'll use multiples of this baseline to creating your leading and spacing.
 
 #### In typography.scss
 
-##### Setting your default headings, paragraphs, lists etc… using compass' rhythm and adjust-font-size-to commands. 
+##### Setting your default headings, paragraphs, lists etc… using compass' rhythm and adjust-font-size-to commands.
 Whenever you adjust the font-size to using the adjust-font-size-to (e.g. 26px) this becomes your base unit to work out how many lines spacing you need above and below the element. e.g.
 
 	@include adjust-font-size-to(26px); // Adjusts font size to 26px
-	
-	margin: 0 0 rhythm(2, 26px) 0; // Adds two lines of our base-line-height (6x2 = 12px) below the element, base those two lines on our font size, and covert to ems. 
+
+	margin: 0 0 rhythm(2, 26px) 0; // Adds two lines of our base-line-height (6x2 = 12px) below the element, base those two lines on our font size, and covert to ems.
 
 Have a play. It makes more sense when you do.
 
 ##### So:
 
-	@include adjust-font-size-to(26px); 
-	margin: 0 0 rhythm(2, 26px) 0;    
+	@include adjust-font-size-to(26px);
+	margin: 0 0 rhythm(2, 26px) 0;
 
-##### Gives us:					
+##### Gives us:
 	font-size: 1.625em;
 	line-height: 1.15385em;
 	margin: 0 0 0.46154em 0;
@@ -123,9 +124,9 @@ Have a play. It makes more sense when you do.
 
 If you want to vertically space other elements on the page (sections etc…) you can use the Compass leader and trailer functions.
 
-	@include padding-leader(x); // adds x lines of padding, based on the base-line-height above the element. 
+	@include padding-leader(x); // adds x lines of padding, based on the base-line-height above the element.
 	@include padding-trailer(x); // adds x lines of padding, based on the base-line-height below the element.
-	@include leader(x); // adds x lines of margin, based on the base-line-height above the element. 
+	@include leader(x); // adds x lines of margin, based on the base-line-height above the element.
 	@include trailer(x); // adds x lines of margin, based on the base-line-height below the element.
 
 #### One final trick
@@ -133,10 +134,10 @@ If you want to vertically space other elements on the page (sections etc…) you
 Say - for example you'd like to add a pixel value to a media query, but you'd like to have that value convert to the relevant em value for the base-line-height or base-font-size. That might mean a few calculations. Sassaparilla includes two functions to help with this.
 
 	em-font(#px) // converts the value to pixels, based on the base-font-size.
-	
+
 	em-base(#px) // converts the value to pixels, based on the base-line-height.
 
-We also tend to like these for fine-tuning elements such as letter spacing. 
+We also tend to like these for fine-tuning elements such as letter spacing.
 
 
 #### Using with Wordpress
