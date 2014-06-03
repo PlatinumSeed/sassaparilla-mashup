@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
     // Define our source and build folders
     //JS
-    js_src_path: 'js',
+    js_src_path: 'js/vendor',
     js_build_path: "js/compiled",
     //CSS
     css_src_path: "css",
