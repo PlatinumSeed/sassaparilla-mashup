@@ -51,13 +51,10 @@ module.exports = function(grunt) {
         separator: ''
       },
       js: {
-        src: ['<%= js_src_path %>/vendor/jquery.min.js'
+        src: [
+            '<%= js_src_path %>/jquery.min.js'
         ],
         dest: '<%= js_build_path %>/app.js'
-      },
-      css:{
-        src: ['<%= css_src_path %>/*.css'],
-        dest: '<%= css_build_path %>/screen.css'
       }
     },
     uglify: {
@@ -65,13 +62,13 @@ module.exports = function(grunt) {
         mangle: true
       },
       js: {
-        src: '<%= concat.js.dest %>',
+        src: '<%= js_build_path %>/app.js',
         dest:'<%= js_build_path %>/app.min.js'
       }
     },
     cssmin: {
       css: {
-        src: '<%= concat.css.dest %>',
+        src: '<%= css_src_path %>/screen.css',
         dest:'<%= css_build_path %>/screen.min.css'
       }
     }

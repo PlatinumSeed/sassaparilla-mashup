@@ -19,13 +19,12 @@
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
 @import "compass/utilities";
-
 @import "libs/reset";
+@import "libs/sprites";//Remove if you not using sprites
 @import "libs/settings";
-@import "libs/mixins";
-@import "libs/sprites"; //Remove if you not using sprites
 @import "libs/typography";
-@import "libs/forms";
+@import "libs/mixins";
+
 
 
 
@@ -40,7 +39,6 @@
 
 // Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
 .pie-clearfix 		{ @include pie-clearfix; }
-
 
 
 // OTHER EXTENDS
@@ -80,38 +78,25 @@ a {
 
 // If using gridset or another pre-defined grid, these should match up to the same breakpoints
 
-// Below examples use a mobile-first approach
-
-
 // Eg for 480px
 @media screen and (min-width: em-font(480px)) {
-	.container {
-		width: 95%;
-	}
+
 }
 
 
 // Eg for 800px
 @media screen and (min-width: em-font(800px)) {
-	.container {
-		min-width: em-font(780px);
-	}
+
 }
 
 // Eg for 1240px
 @media screen and (min-width: em-font(1240px)) {
-	.container {
-		max-width: em-font(1080px);
-	}
+
 }
 
 // Print styles
 @media print {
-	body {
-		// Smaller type for printing. Save a tree
-		font-size: percentage(10 / 16);
-		@include adjust-leading-to(2);
-	}
+
 }
 
 
